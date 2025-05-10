@@ -1,0 +1,14 @@
+torch
+pyyaml
+torch-geometric
+pandas
+scikit-learn
+matplotlib
+networkx
+numpy
+scipy
+tensorflow
+tensorflow-datasets
+tqdm
+tenacity
+google-generativeai
