@@ -8,3 +8,5 @@ model_directory: ../models/
 model_name: KNN_classifier.pkl
 
 # gemini config
+GOOGLE_API_KEY: AIzaSyBypCj2Jd9YhcFlZYXiuyt2mH4ua_AtfSg
+model_version: "gemini-1.5-flash"

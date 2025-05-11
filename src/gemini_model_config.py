@@ -1,5 +1,20 @@
+import yaml
 import google.generativeai as genai
 from google.generativeai.types import HarmCategory, HarmBlockThreshold
+
+
+def load_properties(config_path="gen-graph/config/properties.yaml"):
+    """
+    Load the configuration file.
+
+    Args:
+        config_path (str): Path to the configuration file.
+
+    Returns:
+        dict: Configuration settings.
+    """
+    with open(config_path, "r") as file:
+        return yaml.safe_load(file)
 
 
 def initialize_gemini_model(api_key, version="gemini-1.5-flash"):
@@ -21,7 +36,8 @@ def initialize_gemini_model(api_key, version="gemini-1.5-flash"):
     return model
 
 
-def get_generation_config(temperature=0.1, candidate_count=1, max_output_tokens=300):
+
+def get_generation_config(temperature=0.1, candidate_count=1):
     """
     Define the generation configuration for the Gemini model.
 
@@ -35,8 +51,7 @@ def get_generation_config(temperature=0.1, candidate_count=1, max_output_tokens=
     """
     return genai.types.GenerationConfig(
         temperature=temperature,
-        candidate_count=candidate_count,
-        max_output_tokens=max_output_tokens,
+        candidate_count=candidate_count
     )
 
 
